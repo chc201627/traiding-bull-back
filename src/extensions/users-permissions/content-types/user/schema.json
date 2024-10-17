@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "private": true
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "spots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::spot.spot",
+      "mappedBy": "user_id"
+    },
+    "referral_codes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::referral-code.referral-code",
+      "mappedBy": "users_owner_id"
+    },
+    "hasDelegatedEnergy": {
+      "type": "boolean",
+      "default": false
+    },
+    "settlements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::settlement.settlement",
+      "mappedBy": "user_id"
+    },
+    "name": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "generalspot_commercial": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::generalspot.generalspot"
+    },
+    "generalspot": {
+      "type": "biginteger"
+    }
+  }
+}

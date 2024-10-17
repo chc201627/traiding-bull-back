@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "admin_wallets",
+  "info": {
+    "singularName": "admin-wallet",
+    "pluralName": "admin-wallets",
+    "displayName": "AdminWallet",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "collection",
+        "dispersion",
+        "collection_energy"
+      ]
+    },
+    "address": {
+      "type": "string"
+    }
+  }
+}

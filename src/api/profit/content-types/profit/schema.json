@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profits",
+  "info": {
+    "singularName": "profit",
+    "pluralName": "profits",
+    "displayName": "profit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "broker": {
+      "type": "float"
+    },
+    "company": {
+      "type": "float"
+    },
+    "total_profit": {
+      "type": "float"
+    },
+    "settlements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::settlement.settlement",
+      "mappedBy": "profit_id"
+    },
+    "settlement_day": {
+      "type": "datetime",
+      "required": true
+    },
+    "transactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "profit_id"
+    }
+  }
+}

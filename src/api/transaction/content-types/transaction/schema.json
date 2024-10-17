@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transactions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "balance": {
+      "type": "float"
+    },
+    "balance_pre_transaction": {
+      "type": "float"
+    },
+    "balance_post_transaction": {
+      "type": "float"
+    },
+    "address_sender": {
+      "type": "string"
+    },
+    "address_reciever": {
+      "type": "string"
+    },
+    "transaction_hash": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "BUY",
+        "REINVESTED",
+        "PENDING_PAY",
+        "PAYED",
+        "PENDING_WITHDRAWAL",
+        "WITHDRAWAL"
+      ]
+    },
+    "spot_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::spot.spot",
+      "inversedBy": "transactions"
+    },
+    "profit_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profit.profit",
+      "inversedBy": "transactions"
+    },
+    "settlement_generated": {
+      "type": "float"
+    },
+    "settlement_beneficiary": {
+      "type": "float"
+    },
+    "settlement_total": {
+      "type": "float",
+      "default": 0
+    },
+    "pay_value": {
+      "type": "float",
+      "default": 0
+    },
+    "generalspot_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::generalspot.generalspot",
+      "inversedBy": "transactions"
+    }
+  }
+}

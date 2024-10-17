@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "spots",
+  "info": {
+    "singularName": "spot",
+    "pluralName": "spots",
+    "displayName": "Spot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "permanence_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::permanence.permanence"
+    },
+    "generalspot_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::generalspot.generalspot",
+      "inversedBy": "spots"
+    },
+    "spot_value": {
+      "type": "float"
+    },
+    "total_payed": {
+      "type": "float"
+    },
+    "collected_hash": {
+      "type": "string"
+    },
+    "enabled_before_at": {
+      "type": "datetime"
+    },
+    "user_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "spots"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "ACQUIRED",
+        "ACTIVE",
+        "INACTIVE",
+        "WITHDRAWAL"
+      ],
+      "default": "ACQUIRED",
+      "required": false
+    },
+    "off_date": {
+      "type": "datetime"
+    },
+    "is_reinvest": {
+      "type": "boolean",
+      "default": false,
+      "private": true
+    },
+    "last_settlement": {
+      "type": "float",
+      "default": 0
+    },
+    "transactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "spot_id"
+    },
+    "is_sell": {
+      "type": "boolean",
+      "default": false
+    },
+    "expired_beneficiary": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

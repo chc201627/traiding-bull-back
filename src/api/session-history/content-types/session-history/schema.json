@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "session_histories",
+  "info": {
+    "singularName": "session-history",
+    "pluralName": "session-histories",
+    "displayName": "SessionHistory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "jwt": {
+      "type": "string"
+    },
+    "refresh_token": {
+      "type": "string"
+    },
+    "users_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

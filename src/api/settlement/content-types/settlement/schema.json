@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "settlements",
+  "info": {
+    "singularName": "settlement",
+    "pluralName": "settlements",
+    "displayName": "Settlement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "profit_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profit.profit",
+      "inversedBy": "settlements"
+    },
+    "user_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "settlements"
+    },
+    "investment": {
+      "type": "decimal"
+    },
+    "rate": {
+      "type": "float"
+    },
+    "active_days": {
+      "type": "integer"
+    },
+    "permanence_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::permanence.permanence",
+      "inversedBy": "settlements"
+    },
+    "payed_percent": {
+      "type": "decimal"
+    },
+    "desired_settlement": {
+      "type": "decimal",
+      "default": 0
+    },
+    "settlement_generated": {
+      "type": "decimal",
+      "default": 0
+    },
+    "beneficiary": {
+      "type": "decimal"
+    },
+    "is_executed": {
+      "type": "boolean",
+      "default": false
+    },
+    "spot_id": {
+      "type": "integer",
+      "default": 0
+    },
+    "is_reinvest": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_sell": {
+      "type": "boolean"
+    },
+    "generalspot_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::generalspot.generalspot"
+    },
+    "expired_beneficiary": {
+      "type": "boolean"
+    }
+  }
+}

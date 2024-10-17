@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "historical_profits",
+  "info": {
+    "singularName": "historical-profit",
+    "pluralName": "historical-profits",
+    "displayName": "HistoricalProfit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value_used_generalspot": {
+      "type": "float"
+    },
+    "total_reinvest": {
+      "type": "float"
+    },
+    "total_withdrawal": {
+      "type": "float"
+    },
+    "settlementsyear": {
+      "type": "float"
+    },
+    "settlementsbeneficiary": {
+      "type": "float"
+    },
+    "settlementsmontlhy": {
+      "type": "float"
+    },
+    "totalSettlementgeneralspot": {
+      "type": "float"
+    },
+    "beneficiary_rate": {
+      "type": "float"
+    },
+    "monthly_rate": {
+      "type": "float"
+    },
+    "yearly_rate": {
+      "type": "float"
+    },
+    "company_rate": {
+      "type": "float"
+    },
+    "broker_rate": {
+      "type": "float"
+    },
+    "profit_id": {
+      "type": "integer"
+    },
+    "broker_profit": {
+      "type": "float"
+    },
+    "company_profit": {
+      "type": "float"
+    },
+    "total_profit": {
+      "type": "float"
+    }
+  }
+}

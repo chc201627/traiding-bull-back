@@ -1,0 +1,38 @@
+{
+  "name": "my-project",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-documentation": "^4.6.0",
+    "@strapi/plugin-i18n": "4.6.0",
+    "@strapi/plugin-users-permissions": "4.6.0",
+    "@strapi/strapi": "4.6.0",
+    "api": "^4.5.2",
+    "axios": "^0.27.2",
+    "lightwallet": "^1.0.4",
+    "pg": "8.6.0",
+    "short-unique-id": "^4.4.4",
+    "strapi-plugin-entity-relationship-chart": "^4.1.0",
+    "tron-wallet-hd": "^2.0.2",
+    "tronstation": "^1.0.1",
+    "tronweb": "^4.3.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "17a640c9-9cfc-4ea8-9bc0-1e65a0ab0cc5"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

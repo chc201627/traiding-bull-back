@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "generalspots",
+  "info": {
+    "singularName": "generalspot",
+    "pluralName": "generalspots",
+    "displayName": "Generalspot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "total_value": {
+      "type": "float",
+      "required": true
+    },
+    "min_value": {
+      "type": "float"
+    },
+    "value_used": {
+      "type": "float",
+      "default": 0
+    },
+    "status_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::status.status",
+      "inversedBy": "generalspot"
+    },
+    "spots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::spot.spot",
+      "mappedBy": "generalspot_id"
+    },
+    "max_value": {
+      "type": "biginteger"
+    },
+    "last_profit": {
+      "type": "biginteger"
+    },
+    "settlementsyear": {
+      "type": "float"
+    },
+    "settlementsbeneficiary": {
+      "type": "float"
+    },
+    "settlementsmontlhy": {
+      "type": "float"
+    },
+    "totalSettlementgeneralspot": {
+      "type": "float"
+    },
+    "settelment_status": {
+      "type": "boolean",
+      "default": false
+    },
+    "transactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "generalspot_id"
+    }
+  }
+}

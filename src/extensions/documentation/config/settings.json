@@ -1,0 +1,16 @@
+{
+    "servers": [
+      {
+        "url": "http://localhost:1337/api",
+        "description": "Development server"
+      },
+      {
+        "url": "https://dev-api.streakbull.com/api",
+        "description": "AWS server develop"
+      },
+      {
+        "url": "YOUR_PRODUCTION_SERVER",
+        "description": "Production server"
+      }
+    ]
+  }

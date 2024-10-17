@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "configurations",
+  "info": {
+    "singularName": "configuration",
+    "pluralName": "configurations",
+    "displayName": "configuration",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date_expiration_beneficiary": {
+      "type": "integer",
+      "max": 365,
+      "min": 1,
+      "default": 180
+    }
+  }
+}

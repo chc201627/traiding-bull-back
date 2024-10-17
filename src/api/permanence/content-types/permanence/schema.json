@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "permanences",
+  "info": {
+    "singularName": "permanence",
+    "pluralName": "permanences",
+    "displayName": "Permanence",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "min_time": {
+      "type": "biginteger"
+    },
+    "settlements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::settlement.settlement",
+      "mappedBy": "permanence_id"
+    }
+  }
+}
