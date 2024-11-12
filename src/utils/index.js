@@ -2,7 +2,7 @@
 
 function getLastWeekDates() {
   let now = new Date();
-  let = now.getMonth(); //0-6
+  // let month = now.getMonth(); //0-6
   let numDay = now.getDate();
 
   let start = new Date(now); //copy
